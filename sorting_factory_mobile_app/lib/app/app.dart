@@ -16,8 +16,9 @@ import 'theme/app_theme.dart';
 class RobotArmApp extends StatefulWidget {
   const RobotArmApp({super.key, this.communicationService});
 
-  /// Optional override, useful for tests or for plugging in a real transport
-  /// (Bluetooth, Wi-Fi, serial, ...) once the protocol is decided.
+  /// Transport used to talk to the robot. `main.dart` passes a
+  /// `BleCommunicationService`; tests can inject fakes. Defaults to the
+  /// no-op [UnconfiguredCommunicationService].
   final RobotCommunicationService? communicationService;
 
   @override
